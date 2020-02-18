@@ -1,0 +1,80 @@
+<div class="wrapper">
+    <form [formGroup]="ProductCardForm">
+
+<table>
+    <tr>
+        <th></th>
+      <th>PRODUCT</th>
+      <th>PRICE</th>
+      <th>QUANTITY</th>
+      <th>TOTAL</th>
+    </tr>
+    
+</table>
+<div class="scrollbar">
+    <div class="overflow">
+        <table>
+            <tr *ngIf="this.CardList.length == 0">
+                <td class="no-product"> THERE ARE NO PRODUCTS.</td>
+            </tr>
+        <tr *ngFor="let product of CardList; let i = index;">
+            <td><span (click)="RemoveProduct(i)">-</span></td>
+             <td style="text-align: left;">{{product.name}}</td>
+             <td> {{product.price}}</td>
+             <td>
+               <span (click)="DecreaseQunatity(i)">-</span>
+               <span >{{product.quantity}}</span>
+               <span (click)="IncreaseQuantity(i)">+</span>
+             </td>
+             <td>
+                 {{product.subtotal.toString().length > 4 ? product.subtotal.toString().substring(0,4)+"..." : product.subtotal.toString()}} INR</td>
+    </tr>
+    </table>
+    </div>
+</div>
+
+<table id="footer">
+    <tr>
+      <th>Sub Total</th>      
+      <td style="text-align: left">
+          <!-- {{getCardSubTotal() + ' INR'}} -->
+        {{getCardSubTotal().toString().length > 4 ? getCardSubTotal().toString().substring(0,4)+"..."+ ' INR' : getCardSubTotal().toString()+ ' INR'}}
+    
+    </td>
+      <td style="text-align: right">{{CardList.length}} {{CardList.length == 1 ? 'Item' : 'Items'}} </td>
+    </tr>
+    <tr>
+      <th>VAT tax</th>
+      <td style="text-align: left">{{ ProductCardForm.get('quantity').value>0 ? Vat +'%' : 'N/A'}}</td>  
+      <td style="text-align: right">
+          <!-- {{calculateVat() + ' INR'}} -->
+        {{calculateVat().toString().length > 4 ? calculateVat().toString().substring(0,4)+"..."+ ' INR' : calculateVat().toString()+ ' INR'}}
+    </td>
+    </tr>
+    <tr>
+     <th>Discount</th>
+      <td style="text-align: left">{{ProductCardForm.get('quantity').value>0 ? Discount +'%' : 'N/A'}}</td>
+      <td style="text-align: right">
+          <!-- {{calculatedDiscount() + ' INR'}} -->
+        {{calculatedDiscount().toString().length > 4 ? calculatedDiscount().toString().substring(0,4)+"..."+ ' INR' : calculatedDiscount().toString()+ ' INR'}}
+    </td>
+    </tr>
+    <tr>
+    <th>Total</th>
+      <td style="text-align: left;color: green;">
+          {{calcualateGrandTotal() + ' INR'}}
+        <!-- {{calcualateGrandTotal().toString().length > 4 ? calcualateGrandTotal().toString().substring(0,4)+"..."+ ' INR' : calcualateGrandTotal().toString()+ ' INR'}} -->
+    
+    </td>
+      <td></td>
+    </tr>
+</table>
+<div class="left">
+<button class="button cancel-btn">CANCEL SALES</button>
+</div>
+<div class="right">
+<button class="button save-btn">PROCESS SALES</button>
+</div>
+</form>
+</div>
+

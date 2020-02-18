@@ -1,0 +1,151 @@
+
+  .wrapper{
+    background-color: #c2c2c23b;
+    height: 100%;
+    padding: 10px;
+  }
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  td{
+    font-size: 12px;
+  }
+  td, th {
+    text-align: center;
+    padding: 8px;
+  }
+  td span {
+    border: 1px solid gray;
+    padding: 0px 8px;
+    margin: 2px;
+    height: -4px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #fff;
+    color: black;
+  }
+
+  
+
+.scrollbar::-webkit-scrollbar {
+    background-color:#efefef;
+    width:6px;
+
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    background-color:#efefef;
+    border-radius:6px;
+    border:1px solid #efefef;
+}
+
+
+.scrollbar::-webkit-scrollbar-thumb {
+    background-color:#babac0;
+    border-radius:6px;
+}
+
+
+.scrollbar::-webkit-scrollbar-button {display:none}
+
+body{background-color:#babac0}
+.scrollbar {
+    height: 50vh;
+    min-width: 150px;
+    overflow-y: scroll}
+.overflow{
+  min-height: 100vh;
+    background-color:#efefef;
+}
+.overflow table tr{
+    background-color:#fff;
+}
+#footer th td{
+    text-align: left !important;
+}
+#footer th{
+    background-color:#efefef;
+    border: 1px solid #ebe8e8;
+}
+#footer td{
+    background-color:#fff;
+    border: 1px solid #ebe8e8;
+}
+.button {
+    border: none;
+    color: white;
+    padding: auto;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 98%;
+    height: 50px;
+  }
+  .cancel-btn{
+    background-color: #f44336;
+  }
+  .save-btn{
+    background-color: #4CAF50;
+  }
+   .left, .right{
+    float:left;
+    width:50%;
+  } 
+  .no-product{
+    text-align: center;
+    padding: 34px;
+  }
+
+
+
+// *{
+//   box-sizing: border-box;
+// }
+
+// .container{
+//  width:1000px;
+// }
+// .scrollTable{
+  
+// 	overflow: scroll;
+//   overflow-x: hidden;
+// 	height: 100px;
+// } 
+// table{
+// margin: 0px!important;
+// width:983px!important;
+// border-collapse: collapse; 
+
+// }
+
+// /*   Styles of the th and td  */
+
+// /* Id */
+// .tbDataId{
+// 	width:5%;
+// }
+
+// /* Дата,
+// Дійсно до */
+// .tbDataData{
+// 	/*width:170px;*/
+// 	width: 15%;
+// }
+
+// /* П І Б */
+// .tbDataName{
+// 	width: 15%;
+// }
+
+// /*Критерії */
+// .tbDataDiseases{
+// 	width:10%;
+// }

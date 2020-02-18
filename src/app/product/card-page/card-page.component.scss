@@ -1,0 +1,185 @@
+.bill-count{
+width: 100%;
+}
+.bill-count td:nth-child(1),
+.bill-count th:nth-child(1) {
+    width: 34%;
+}
+.bill-count td:nth-child(2),
+.bill-count th:nth-child(2) {
+    width: 33%;
+}
+.bill-count td:nth-child(3),
+.bill-count th:nth-child(3) {
+    width: 33%;
+}
+.wrapper{
+    background-color: #c2c2c23b;
+    padding: 10px 20px;
+    height: 100%;
+}
+.fixed_headers {
+    width: 100%;
+    height: 43vh;
+  }
+  .fixed_headers td:nth-child(1),
+.fixed_headers th:nth-child(1) {
+    width: 5%;
+}
+.fixed_headers td:nth-child(2),
+.fixed_headers th:nth-child(2) {
+    width: 20%;
+}
+.fixed_headers td:nth-child(3),
+.fixed_headers th:nth-child(3) {
+    width: 15%;
+}
+.fixed_headers td:nth-child(4),
+.fixed_headers th:nth-child(4) {
+    width: 25%;
+}
+.fixed_headers td:nth-child(5),
+.fixed_headers th:nth-child(5) {
+    width: 35%;
+}
+
+  .fixed_headers, td {
+    border-collapse: collapse;
+    // border: 1px solid #000;
+  }
+  
+  .fixed_headers thead {
+    display: table; /* to take the same width as tr */
+    width: calc(100% - 17px); /* - 17px because of the scrollbar width */
+  }
+  
+ .fixed_headers tbody {
+    display: block; /* to enable vertical scrolling */
+    max-height: 35vh; /* e.g. */
+    overflow-y: scroll; /* keeps the scrollbar even if it doesn't need it; display purpose */
+  }
+  
+  .fixed_headers th, td {
+    // width: 20%; /* to enable "word-break: break-all" */
+    padding: 5px;
+    // word-break: break-all; /* 4. */
+  }
+  
+  .fixed_headers tr {
+    display: table; /* display purpose; th's border */
+    width: 100%;
+    box-sizing: border-box; /* because of the border (Chrome needs this line, but not FF) */
+  }
+  
+  .fixed_headers td {
+    text-align: center;
+    background-color: white;
+  }
+  td span {
+    border: 1px solid gray;
+    padding: 0px 8px;
+    margin: 2px;
+    height: -4px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+.card-footer-btn{
+    // height: 10%;
+    display: flex;
+}
+  .card-footer table {
+    width: 100%;
+    // height: 10%;
+  }
+ 
+  .card-footer table td:nth-child(1),
+  .card-footer table th:nth-child(1) {
+      width: 30%;
+    background-color: #efefef;
+
+  }
+  .card-footer table td:nth-child(2),
+  .card-footer table th:nth-child(2) {
+      width: 35%;
+    background-color: white;
+
+  }
+  .card-footer table td:nth-child(3),
+  .card-footer table th:nth-child(3) {
+      width: 35%;
+    background-color: white;
+
+  }
+  .button {
+    border: none;
+    color: white;
+    padding: auto;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 98%;
+    height: 54px;
+  }
+  .cancel-btn{
+    background-color: #f44336;
+  }
+  .save-btn{
+    background-color: #4CAF50;
+  }
+   .left, .right{
+    float:left;
+    width:50%;
+  } 
+
+
+  .card-header::-webkit-scrollbar {
+    background-color:#efefef;
+    width:6px;
+
+}
+
+.card-header::-webkit-scrollbar-track {
+    background-color:#efefef;
+    border-radius:6px;
+    border:1px solid #efefef;
+}
+
+
+.card-header::-webkit-scrollbar-thumb {
+    background-color:#babac0;
+    border-radius:6px;
+}
+.card-header::-webkit-scrollbar-button {display:none}
+
+.popup-button-row{
+  margin: 2px;
+}
+.close-btn{
+    color: black;
+    border: none;
+    padding: auto;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    cursor: pointer;
+    width: 100%;
+  border: 1px solid black;
+  padding: 14px;
+    background: white;
+
+}
+.myDialog{
+  padding: 0px;
+}
+.content{
+  padding: 0px 24px 24px 24px;
+}
+.header h3{
+  margin: 0px;
+  padding: 10px;
+  color: white;
+}

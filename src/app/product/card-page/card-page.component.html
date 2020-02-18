@@ -1,0 +1,142 @@
+<div class="wrapper">
+    <div class="card-header">
+        <table class="fixed_headers"> 
+            <thead> 
+              <tr>
+                <th></th>
+                <th>PRODUCT</th>
+                <th>PRICE</th>
+                <th>QUANTITY</th>
+                <th>TOTAL</th>
+              </tr> 
+            </thead>
+            <tbody>
+              <tr *ngIf="this.CardList.length == 0" style="height: 100px;">
+                <td class="no-product"> THERE ARE NO PRODUCTS.</td>
+            </tr>
+        <tr *ngFor="let product of CardList; let i = index;">
+            <td><i class="fa fa-times-circle" aria-hidden="true" (click)="RemoveProduct(i)" style="color: red;"></i></td>
+             <td >{{product.name}}</td>
+             <td> {{product.price}}</td>
+             <td>
+               <span (click)="DecreaseQunatity(i)" style="background-color: gray; color: white;">-</span>
+               <span >{{product.quantity}}</span>
+               <span (click)="IncreaseQuantity(i)"  style="background-color: gray; color: white;">+</span>
+             </td>
+             <td>
+                 {{product.subtotal.toString().length > 6 ? product.subtotal.toString().substring(0,6)+"..." : product.subtotal.toString()}} INR</td>
+        </tr>
+            </tbody>
+          </table>
+    </div>
+<div class="card-footer">
+    <table> 
+        <tbody>
+          <tr>
+            <th>Sub Total</th>
+            <td> 
+              {{getCardSubTotal().toString().length > 6 ? getCardSubTotal().toString().substring(0,6)+"..."+ ' INR' : getCardSubTotal().toString()+ ' INR'}}
+            </td>
+            <td>{{CardList.length}} {{CardList.length == 1 ? 'Item' : 'Items'}}</td>
+    
+          </tr>
+          <tr>
+            <th>VAT tax</th>
+            <td>{{calculateVat().toString().length > 6 ? calculateVat().toString().substring(0,6)+"..."+ ' INR' : calculateVat().toString()+ ' INR'}}</td>
+            <td>{{CardList.length}} {{CardList.length == 1 ? 'Item' : 'Items'}}</td>
+    
+          </tr>
+          <tr>
+            <th>Discount</th>
+            <td>{{ ProductCardForm.get('quantity').value>0 ? Vat +'%' : 'N/A'}}</td>
+            <td>{{calculateVat().toString().length > 6 ? calculateVat().toString().substring(0,6)+"..."+ ' INR' : calculateVat().toString()+ ' INR'}}</td>
+    
+          </tr>
+          <tr>
+            <th>Discount</th>
+            <td>{{ProductCardForm.get('quantity').value>0 ? Discount +'%' : 'N/A'}}</td>
+            <td>{{calculatedDiscount().toString().length > 6 ? calculatedDiscount().toString().substring(0,6)+"..."+ ' INR' : calculatedDiscount().toString()+ ' INR'}}
+            </td>
+
+          </tr>
+          <tr>
+            <th>Total</th>
+              <td style="text-align: left;color: green;">
+                  {{calcualateGrandTotal() + ' INR'}}            
+            </td>
+              <td></td>
+            </tr>
+        </tbody>
+      </table>
+</div>
+<div class="card-footer-btn">
+        <button class="button cancel-btn">CANCEL SALES</button>
+        
+        <button class="button save-btn" (click)="ProcessSales()" >PROCESS SALES</button>
+    
+  </div>
+</div>
+<ng-template #myDialog class="myDialog">
+  <div class="header">
+
+  <h3 style="background-color: #191e39;">
+    Receipt
+  </h3>
+  </div>
+  <div class="content">
+  <mat-dialog-content>
+    <div style="text-align: center;">
+      <h3>
+        Sales No: 00102</h3>
+    </div>
+    <h5>
+      Date: 18-02-2020 12:03:13
+    </h5>
+        <table class="bill"> 
+          <thead> 
+            <tr>
+              <th>#</th>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>SubTotal</th>
+            </tr> 
+          </thead>
+          <tbody>
+            <tr>
+              <td class="no-product"> PRODUCTS.</td>
+              <td class="no-product"> PRODUCTS.</td>
+              <td class="no-product"> PRODUCTS.</td>
+              <td class="no-product"> PRODUCTS.</td>
+          </tr>
+          </tbody>
+          </table>
+
+  </mat-dialog-content>
+  
+  <table class="bill-count"> 
+    <thead> 
+      <tr>
+        <th>Total Items</th>        
+        <td class="no-product"> 2 Items</td>
+        <td class="no-product"> 4,000 INR</td>
+      </tr> 
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <th>Discount</th>
+        <td class="no-product"> 10%</td>
+      </tr>
+      <tr>
+        <td></td>
+        <th>VAT</th>
+        <td class="no-product"> 10%</td>
+    </tr>
+    </tbody>
+    </table>
+
+  <mat-dialog-actions class="popup-button-row">
+    <button class="close-btn">Close</button>
+  </mat-dialog-actions>
+</div>
+</ng-template>

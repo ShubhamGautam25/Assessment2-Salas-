@@ -1,0 +1,23 @@
+
+<div class="scrollbar">
+    <div class="overflow">
+<div class="content">
+    <div class="navlist" *ngFor="let product of productImgList">
+      
+            <img class="thumbnail" (click)="AddNewProduct(product)" src="../../../assets/images/{{product.image}}" alt="">
+            <div class="middle">
+              <div class="text">{{product.name}}</div>
+            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- <div class="scrollbar">
+    <div class="overflow">
+        <ul class="img-grid">
+          <li *ngFor="let product of productImgList">
+        <img class="thumbnail" (click)="AddNewProduct(product)" src="../../../assets/images/{{product.image}}" alt="">
+          </li>
+        </ul>
+     </div>
+</div> -->
